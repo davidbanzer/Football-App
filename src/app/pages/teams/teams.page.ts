@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Team } from '../../models/Team';
 import { FootballApiService } from '../../services/football-api.service';
 
@@ -9,7 +10,7 @@ import { FootballApiService } from '../../services/football-api.service';
 })
 export class TeamsPage implements OnInit {
   teamsList: Team[] = [];
-  constructor(private api: FootballApiService) { }
+  constructor(private api: FootballApiService, private router: Router) { }
 
   ngOnInit() {
     this.fetchTeamsList();
@@ -24,5 +25,8 @@ export class TeamsPage implements OnInit {
         console.log(this.teamsList);
       }
     });
+  }
+  goToTeamDetail(id: string){
+    this.router.navigateByUrl('team-detail/'+id);
   }
 }
