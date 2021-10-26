@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Teams</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let team of teamsList">
+      <ion-label class="center">
+        <h2>{{team["Nombre del equipo"]}}</h2>
+        <img src="{{team['Logo del Equipo']}}" alt="team logo">
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
