@@ -11,13 +11,13 @@ export class FootballApiService {
   constructor(private http: HttpClient) {}
   //teams
   getTeamsList(){
-    return this.http.get<Team[]>('https://footbal-api.herokuapp.com/teams');
+    return this.http.get<Team[]>('http://localhost:3000/teams');
   }
   getTeamById(id: string){
-    return this.http.get<Team>('https://footbal-api.herokuapp.com/teams/'+id);
+    return this.http.get<Team>('http://localhost:3000/teams/'+id);
   }
   //players
   getPlayersList(){
-    return this.http.get<Player[]>('https://footbal-api.herokuapp.com/players');
+    return this.http.get<Player[]>('http://localhost:3000/players');
   }
 }
