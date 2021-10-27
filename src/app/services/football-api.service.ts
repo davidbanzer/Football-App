@@ -39,4 +39,7 @@ export class FootballApiService {
   getPlayersList(){
     return this.http.get<Player[]>('http://localhost:3000/players');
   }
+  getPlayersListByTeam(id: string){
+    return this.http.get<Player[]>('http://localhost:3000/players?teamId='+id);
+  }
 }
