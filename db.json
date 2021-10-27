@@ -46,10 +46,16 @@
       "league": 2
     },
     {
-      "name": "David",
+      "name": "Real Madrid",
       "logo": "https://www.teahub.io/photos/full/86-862698_real-madrid-wallpapers-wallpaper-logo-real-madrid-api.jpg",
       "league": "1",
       "id": 4
+    },
+    {
+      "name": "Barcelona",
+      "logo": "https://1000marcas.net/wp-content/uploads/2020/03/Logo-Barcelona.png",
+      "league": "3",
+      "id": 5
     }
   ],
   "players": [

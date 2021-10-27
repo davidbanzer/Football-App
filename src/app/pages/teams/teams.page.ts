@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { Team } from '../../models/Team';
 import { FootballApiService } from '../../services/football-api.service';
 
@@ -13,11 +14,14 @@ export class TeamsPage implements OnInit {
   name: string;
   logo: string;
   league: string;
-  constructor(private api: FootballApiService, private router: Router) {
+  // eslint-disable-next-line max-len
+  constructor(private api: FootballApiService, private router: Router, private ar: ActivatedRoute,  public toastController: ToastController) {
+    this.ar.params.subscribe(data => {
+      this.fetchTeamsList();
+      });
   }
 
   ngOnInit() {
-    this.fetchTeamsList();
   }
 
   fetchTeamsList(){
@@ -45,5 +49,13 @@ export class TeamsPage implements OnInit {
     this.name = '';
     this.logo = '';
     this.league = '';
+    this.presentToast('Team added');
+  }
+  async presentToast(message){
+    const toast = await this.toastController.create({
+      message ,
+      duration : 2000
+    });
+    toast.present();
   }
 }

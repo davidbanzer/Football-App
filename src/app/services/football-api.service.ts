@@ -21,6 +21,14 @@ export class FootballApiService {
     };
     return this.http.post<Team>('http://localhost:3000/teams',team);
   }
+  editTeam(id: string, name: string, logo: string, league: string){
+    const team ={
+      name,
+      logo,
+      league
+    };
+    return this.http.put<Team>('http://localhost:3000/teams/'+id,team);
+  }
   deleteTeam(id: string){
     return this.http.delete('http://localhost:3000/teams/'+id);
   }

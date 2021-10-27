@@ -1,24 +1,18 @@
-.center{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.buttons{
-    font-size: 16px;
-    width: 100px;
-}
+
 .center_buttons{
-    margin-top: 15px;
+    margin: 15px 0px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.red{
-    background-color: red;
-}
 .add-button{
     margin: 10px 20px;
+}
+.expand{
+    width: 100%;
+}
+.icon{
+    font-size: 30px;
 }

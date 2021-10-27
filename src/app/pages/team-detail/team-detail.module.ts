@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TeamDetailPageRoutingModule } from './team-detail-routing.module';
 
 import { TeamDetailPage } from './team-detail.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TeamDetailPageRoutingModule
+    TeamDetailPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [TeamDetailPage]
 })

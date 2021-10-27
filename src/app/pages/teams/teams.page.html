@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Teams</ion-title>
+    <ion-title>Football</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -40,18 +40,22 @@
 
   <ion-list>
     <ion-item *ngFor="let team of teamsList">
-      <ion-label class="center">
-        <h2>{{team.name}}</h2>
-        <img src="{{team.logo}}" alt="team logo">
+      <ion-card class="expand">
+        <ion-card-header class="ion-text-center">
+          <h2>{{team.name}}</h2>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+          <img src="{{team.logo}}" alt="Team logo">
+        </ion-card-content>
         <div class="center_buttons">
-          <ion-button class="buttons" (click)="goToTeamDetail(team.id)">
-            <ion-icon name="create"></ion-icon>
-          </ion-button>
-          <ion-button class="buttons" color="danger" (click)="deleteTeam(team.id)">
-            <ion-icon name="trash"></ion-icon>
-          </ion-button>
+          <ion-tab-button (click)="goToTeamDetail(team.id)">
+            <ion-icon class="icon" name="create"></ion-icon>
+          </ion-tab-button>
+          <ion-tab-button color="danger" (click)="deleteTeam(team.id)">
+            <ion-icon class="icon" name="trash"></ion-icon>
+          </ion-tab-button>
         </div>
-      </ion-label>
+      </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>
