@@ -76,6 +76,12 @@
       "id": 3,
       "avatar": "https://robohash.org/nihilsittempore.png?size=250x250&set=set1",
       "teamId": 3
+    },
+    {
+      "name": "Karim Benzema",
+      "avatar": "https://cdn.allfamous.org/people/avatars/karim-benzema-d8cn-allfamous.org.jpg",
+      "teamId": "4",
+      "id": 4
     }
   ]
 }

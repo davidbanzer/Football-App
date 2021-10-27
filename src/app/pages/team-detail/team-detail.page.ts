@@ -19,6 +19,8 @@ export class TeamDetailPage implements OnInit {
   league: string;
   //player
   playersList: Player[] = [];
+  playerName: string;
+  avatar: string;
   // eslint-disable-next-line max-len
   constructor(private ar: ActivatedRoute, private api: FootballApiService, private navCtrl: NavController, public toastController: ToastController) { }
 
@@ -33,27 +35,20 @@ export class TeamDetailPage implements OnInit {
       console.log(this.team);
     });
   }
-  editTeam(id: string,name: string, logo: string, league: string){
-    this.api.editTeam(id,name,logo,league).subscribe(newTeam =>{
-      console.log(newTeam);
-    });
-  }
   fetchListPlayers(id: string){
     this.api.getPlayersListByTeam(id).subscribe((player: Player[]) =>{
       this.playersList = player;
       console.log(this.playersList);
     });
   }
-  submit(){
-    this.editTeam(this.teamId,this.name,this.logo,this.league);
-    this.navCtrl.back();
-    this.presentToast('Team edited');
-  }
-  async presentToast(message){
-    const toast = await this.toastController.create({
-      message ,
-      duration : 2000
+  addPlayer(name: string, avatar: string, team: string){
+    this.api.addPlayer(name,avatar,team).subscribe(newPlayer =>{
+      this.playersList.push(newPlayer);
     });
-    toast.present();
+  }
+  submit(){
+    this.addPlayer(this.playerName,this.avatar,this.teamId);
+    this.playerName = '';
+    this.avatar = '';
   }
 }

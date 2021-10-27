@@ -33,6 +33,9 @@ export class TeamsPage implements OnInit {
   goToTeamDetail(id: string){
     this.router.navigateByUrl('team-detail/'+id);
   }
+  goToEditTeam(id: string){
+    this.router.navigateByUrl('edit-team/'+id);
+  }
   deleteTeam(id: string){
     this.api.deleteTeam(id).subscribe(() => {
         console.log('borrado');

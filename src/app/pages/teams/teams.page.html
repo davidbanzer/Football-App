@@ -45,10 +45,10 @@
           <h2>{{team.name}}</h2>
         </ion-card-header>
         <ion-card-content class="ion-text-center">
-          <img src="{{team.logo}}" alt="Team logo">
+          <img src="{{team.logo}}" alt="Team logo" (click)="goToTeamDetail(team.id)">
         </ion-card-content>
         <div class="center_buttons">
-          <ion-tab-button (click)="goToTeamDetail(team.id)">
+          <ion-tab-button (click)="goToEditTeam(team.id)">
             <ion-icon class="icon" name="create"></ion-icon>
           </ion-tab-button>
           <ion-tab-button color="danger" (click)="deleteTeam(team.id)">
