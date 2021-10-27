@@ -10,23 +10,40 @@ import { FootballApiService } from '../../services/football-api.service';
 })
 export class TeamsPage implements OnInit {
   teamsList: Team[] = [];
-  constructor(private api: FootballApiService, private router: Router) { }
+  name: string;
+  logo: string;
+  league: string;
+  constructor(private api: FootballApiService, private router: Router) {
+  }
 
   ngOnInit() {
     this.fetchTeamsList();
   }
 
   fetchTeamsList(){
-    this.api.getTeamsList().subscribe(data => {
-      if(!data){
-        console.log(Error);
-      } else {
-        this.teamsList = data;
-        console.log(this.teamsList);
-      }
+    this.api.getTeamsList().subscribe((teams: Team[]) =>{
+      this.teamsList = teams;
+
     });
   }
   goToTeamDetail(id: string){
     this.router.navigateByUrl('team-detail/'+id);
+  }
+  deleteTeam(id: string){
+    this.api.deleteTeam(id).subscribe(() => {
+        console.log('borrado');
+        this.teamsList = this.teamsList.filter(team => team.id !== id);
+    });
+  }
+  addTeam(name: string, logo: string, league: string){
+    this.api.addTeam(name,logo,league).subscribe(newTeam =>{
+      this.teamsList.push(newTeam);
+    });
+  }
+  submit(){
+    this.addTeam(this.name,this.logo,this.league);
+    this.name = '';
+    this.logo = '';
+    this.league = '';
   }
 }

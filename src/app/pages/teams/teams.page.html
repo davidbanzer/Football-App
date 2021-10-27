@@ -5,11 +5,52 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <form>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Team name:</ion-label>
+          <ion-input #txtName="ngModel" [(ngModel)]="name" name="name"
+            placeholder="Team Name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">Team logo:</ion-label>
+          <ion-input #txtLogo="ngModel" [(ngModel)]="logo" name="logo"
+            placeholder="Team Logo"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating">League:</ion-label>
+          <ion-input #txtName="ngModel" [(ngModel)]="league" name="league"
+            placeholder="League"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-button class="add-button" (click)="submit()">
+      Add Team
+    </ion-button>
+  </form>
+
   <ion-list>
-    <ion-item *ngFor="let team of teamsList" (click)="goToTeamDetail(team.id)">
+    <ion-item *ngFor="let team of teamsList">
       <ion-label class="center">
         <h2>{{team.name}}</h2>
         <img src="{{team.logo}}" alt="team logo">
+        <div class="center_buttons">
+          <ion-button class="buttons" (click)="goToTeamDetail(team.id)">
+            <ion-icon name="create"></ion-icon>
+          </ion-button>
+          <ion-button class="buttons" color="danger" (click)="deleteTeam(team.id)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </div>
       </ion-label>
     </ion-item>
   </ion-list>

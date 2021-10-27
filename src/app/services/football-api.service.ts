@@ -13,6 +13,17 @@ export class FootballApiService {
   getTeamsList(){
     return this.http.get<Team[]>('http://localhost:3000/teams');
   }
+  addTeam(name: string, logo: string, league: string){
+    const team = {
+      name,
+      logo,
+      league
+    };
+    return this.http.post<Team>('http://localhost:3000/teams',team);
+  }
+  deleteTeam(id: string){
+    return this.http.delete('http://localhost:3000/teams/'+id);
+  }
   getTeamById(id: string){
     return this.http.get<Team>('http://localhost:3000/teams/'+id);
   }

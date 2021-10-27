@@ -1,69 +1,75 @@
 {
   "leagues": [
-      {
-          "name": "Sierra",
-          "id": 1,
-          "logo": "https://robohash.org/nihilquasiquis.png?size=50x50&set=set1"
-      },
-      {
-          "name": "Alfa Juliett",
-          "id": 2,
-          "logo": "https://robohash.org/quisaccusantiumin.png?size=50x50&set=set1"
-      },
-      {
-          "name": "Uniform Zulu",
-          "id": 3,
-          "logo": "https://robohash.org/nonnecessitatibusexpedita.png?size=50x50&set=set1"
-      },
-      {
-          "name": "November",
-          "id": 4,
-          "logo": "https://robohash.org/suntutut.png?size=50x50&set=set1"
-      },
-      {
-          "name": "Whiskey Hotel",
-          "id": 5,
-          "logo": "https://robohash.org/solutamolestiaesunt.png?size=50x50&set=set1"
-      }
+    {
+      "name": "Sierra",
+      "id": 1,
+      "logo": "https://robohash.org/nihilquasiquis.png?size=50x50&set=set1"
+    },
+    {
+      "name": "Alfa Juliett",
+      "id": 2,
+      "logo": "https://robohash.org/quisaccusantiumin.png?size=50x50&set=set1"
+    },
+    {
+      "name": "Uniform Zulu",
+      "id": 3,
+      "logo": "https://robohash.org/nonnecessitatibusexpedita.png?size=50x50&set=set1"
+    },
+    {
+      "name": "November",
+      "id": 4,
+      "logo": "https://robohash.org/suntutut.png?size=50x50&set=set1"
+    },
+    {
+      "name": "Whiskey Hotel",
+      "id": 5,
+      "logo": "https://robohash.org/solutamolestiaesunt.png?size=50x50&set=set1"
+    }
   ],
   "teams": [
-      {
-          "name": "Dazzlesphere",
-          "id": 1,
-          "logo": "https://robohash.org/autemvoluptatemdolorem.png?size=250x250&set=set1",
-          "league": 1
-      },
-      {
-          "name": "Vipe",
-          "id": 2,
-          "logo": "https://robohash.org/nesciuntvelitpossimus.png?size=250x250&set=set1",
-          "league": 1
-      },
-      {
-          "name": "Geba",
-          "id": 3,
-          "logo": "https://robohash.org/facereimpeditdolores.png?size=250x250&set=set1",
-          "league": 2
-      }
+    {
+      "name": "Dazzlesphere",
+      "id": 1,
+      "logo": "https://robohash.org/autemvoluptatemdolorem.png?size=250x250&set=set1",
+      "league": 1
+    },
+    {
+      "name": "Vipe",
+      "id": 2,
+      "logo": "https://robohash.org/nesciuntvelitpossimus.png?size=250x250&set=set1",
+      "league": 1
+    },
+    {
+      "name": "Geba",
+      "id": 3,
+      "logo": "https://robohash.org/facereimpeditdolores.png?size=250x250&set=set1",
+      "league": 2
+    },
+    {
+      "name": "David",
+      "logo": "https://www.teahub.io/photos/full/86-862698_real-madrid-wallpapers-wallpaper-logo-real-madrid-api.jpg",
+      "league": "1",
+      "id": 4
+    }
   ],
   "players": [
-      {
-          "name": "Auguste Penwarden",
-          "id": 1,
-          "avatar": "https://robohash.org/etconsequunturreprehenderit.png?size=250x250&set=set1",
-          "teamId": 1
-      },
-      {
-          "name": "Hildegarde Barkas",
-          "id": 2,
-          "avatar": "https://robohash.org/cumquesuntmaiores.png?size=250x250&set=set1",
-          "teamId": 2
-      },
-      {
-          "name": "Polly Berresford",
-          "id": 3,
-          "avatar": "https://robohash.org/nihilsittempore.png?size=250x250&set=set1",
-          "teamId": 3
-      }
+    {
+      "name": "Auguste Penwarden",
+      "id": 1,
+      "avatar": "https://robohash.org/etconsequunturreprehenderit.png?size=250x250&set=set1",
+      "teamId": 1
+    },
+    {
+      "name": "Hildegarde Barkas",
+      "id": 2,
+      "avatar": "https://robohash.org/cumquesuntmaiores.png?size=250x250&set=set1",
+      "teamId": 2
+    },
+    {
+      "name": "Polly Berresford",
+      "id": 3,
+      "avatar": "https://robohash.org/nihilsittempore.png?size=250x250&set=set1",
+      "teamId": 3
+    }
   ]
 }
