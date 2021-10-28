@@ -6,12 +6,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let league of leaguesList" (click)="goToLeagueDetail(league.id)">
+    <ion-item *ngFor="let league of leaguesList" >
       <ion-avatar slot="start">
         <img src="{{league.logo}}" alt="League logo">
       </ion-avatar>
       <ion-label>
-        <h2>{{league.name}}</h2>
+        <h2 (click)="goToLeagueDetail(league.id)">{{league.name}}</h2>
       </ion-label>
     </ion-item>
   </ion-list>

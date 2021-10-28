@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController} from '@ionic/angular';
 import { FootballApiService } from '../../services/football-api.service';
 import { League } from '../../models/League';
 import { Team } from '../../models/Team';
@@ -19,7 +19,7 @@ export class LeagueDetailPage implements OnInit {
   name: string;
   logo: string;
   // eslint-disable-next-line max-len
-  constructor(private ar: ActivatedRoute, private api: FootballApiService, private navCtrl: NavController, public toastController: ToastController) { }
+  constructor(private ar: ActivatedRoute, private api: FootballApiService, private navCtrl: NavController) { }
 
   ngOnInit() {
     this.leagueId = this.ar.snapshot.paramMap.get('id');

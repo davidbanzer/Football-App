@@ -38,5 +38,13 @@ export class PlayersPage implements OnInit {
   goToPlayerDetail(id: string){
     this.router.navigateByUrl('player-detail/'+id);
   }
+  goToEditPlayer(id: string){
+    this.router.navigateByUrl('edit-player/'+id);
+  }
+  deletePlayer(id: string){
+    this.api.deletePlayer(id).subscribe(()=>{
+      this.playersList = this.playersList.filter(player => player.id !== id);
+    });
+  }
 
 }

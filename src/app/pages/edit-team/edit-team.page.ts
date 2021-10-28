@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { Team } from '../../models/Team';
 import { FootballApiService } from '../../services/football-api.service';
 
@@ -17,15 +17,15 @@ export class EditTeamPage implements OnInit {
   logo: string;
   league: string;
   // eslint-disable-next-line max-len
-  constructor(private ar: ActivatedRoute, private api: FootballApiService, private navCtrl: NavController, public toastController: ToastController) { }
+  constructor(private ar: ActivatedRoute, private api: FootballApiService, private navCtrl: NavController) { }
 
   ngOnInit() {
     this.teamId = this.ar.snapshot.paramMap.get('id');
     this.fetchTeamById(this.teamId);
   }
   fetchTeamById(id: string){
-    this.api.getTeamById(id).subscribe(data => {
-      this.team = data;
+    this.api.getTeamById(id).subscribe((team: Team)=> {
+      this.team = team;
       console.log(this.team);
     });
   }
@@ -37,14 +37,6 @@ export class EditTeamPage implements OnInit {
   submit(){
     this.editTeam(this.teamId,this.name,this.logo,this.league);
     this.navCtrl.back();
-    this.presentToast('Team edited');
-  }
-  async presentToast(message){
-    const toast = await this.toastController.create({
-      message ,
-      duration : 2000
-    });
-    toast.present();
   }
 
 }

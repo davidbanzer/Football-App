@@ -6,13 +6,21 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let team of teamsList" (click)="goToTeamDetail(team.id)">
+    <ion-item *ngFor="let team of teamsList">
       <ion-avatar slot="start">
         <img src="{{team.logo}}" alt="League logo">
       </ion-avatar>
       <ion-label>
-        <h2>{{team.name}}</h2>
+        <h2 (click)="goToTeamDetail(team.id)">{{team.name}}</h2>
       </ion-label>
+      <div class="end">
+        <ion-tab-button (click)="goToEditTeam(team.id)">
+          <ion-icon name="create"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="deleteTeam(team.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-tab-button>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

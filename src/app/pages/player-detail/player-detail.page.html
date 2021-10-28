@@ -1,9 +1,12 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>player-detail</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header title="Player Detail" route="tabs/players"></app-header>
 
 <ion-content>
-
+  <ion-card >
+    <ion-card-header class="ion-text-center">
+      <h2>{{player.name}}</h2>
+    </ion-card-header>
+    <ion-card-content class="ion-text-center">
+      <img src="{{player.avatar}}" alt="Avatar">
+    </ion-card-content>
+  </ion-card>
 </ion-content>

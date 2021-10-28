@@ -36,7 +36,6 @@ export class TeamsPage implements OnInit {
   }
   deleteTeam(id: string){
     this.api.deleteTeam(id).subscribe(() => {
-        console.log('borrado');
         this.teamsList = this.teamsList.filter(team => team.id !== id);
     });
   }

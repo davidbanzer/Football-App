@@ -48,6 +48,10 @@ const routes: Routes = [
     path: 'league-detail/:id',
     loadChildren: () => import('./pages/league-detail/league-detail.module').then( m => m.LeagueDetailPageModule)
   },
+  {
+    path: 'edit-player/:id',
+    loadChildren: () => import('./pages/edit-player/edit-player.module').then( m => m.EditPlayerPageModule)
+  },
 ];
 
 @NgModule({

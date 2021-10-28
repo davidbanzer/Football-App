@@ -6,24 +6,20 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let player of playersList">
-      <ion-card class="expand">
-        <ion-card-header class="ion-text-center">
-          <h2>{{player.name}}</h2>
-        </ion-card-header>
-        <ion-card-content class="ion-text-center">
-          <img src="{{player.avatar}}" alt="Avatar" (click)="goToPlayerDetail(player.id)">
-        </ion-card-content>
-        <div class="center_buttons">
-          <ion-tab-button >
-            <ion-icon class="icon" name="create"></ion-icon>
-            <ion-label>Edit</ion-label>
-          </ion-tab-button>
-          <ion-tab-button >
-            <ion-icon class="icon" name="trash"></ion-icon>
-            <ion-label>Delete</ion-label>
-          </ion-tab-button>
-        </div>
-      </ion-card>
+      <ion-avatar slot="start">
+        <img src="{{player.avatar}}" alt="Avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2 (click)="goToPlayerDetail(player.id)">{{player.name}}</h2>
+      </ion-label>
+      <div class="end">
+        <ion-tab-button (click)="goToEditPlayer(player.id)">
+          <ion-icon name="create"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button (click)="deletePlayer(player.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-tab-button>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
