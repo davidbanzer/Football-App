@@ -23,6 +23,14 @@ const routes: Routes = [
     path: 'edit-team/:id',
     loadChildren: () => import('./pages/edit-team/edit-team.module').then( m => m.EditTeamPageModule)
   },
+  {
+    path: 'player-detail/:id',
+    loadChildren: () => import('./pages/player-detail/player-detail.module').then( m => m.PlayerDetailPageModule)
+  },
+  {
+    path: 'players',
+    loadChildren: () => import('./pages/players/players.module').then( m => m.PlayersPageModule)
+  },
 ];
 
 @NgModule({

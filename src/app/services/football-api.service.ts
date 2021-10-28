@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Team } from '../models/Team';
 import { Player } from '../models/Player';
+import { League } from '../models/League';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,9 @@ export class FootballApiService {
   getTeamById(id: string){
     return this.http.get<Team>('http://localhost:3000/teams/'+id);
   }
+  getTeamByLeague(id: string){
+    return this.http.get<Team[]>('http://localhost:3000/teams?league='+id);
+  }
   //players
   getPlayersList(){
     return this.http.get<Player[]>('http://localhost:3000/players');
@@ -49,5 +53,20 @@ export class FootballApiService {
       teamId
     };
     return this.http.post<Player>('http://localhost:3000/players',player);
+  }
+  deletePlayer(id: string){
+    return this.http.delete('http://localhost:3000/players/'+id);
+  }
+  editPlayer(id: string, name: string, avatar: string, teamId: string){
+    const player ={
+      name,
+      avatar,
+      teamId
+    };
+    return this.http.put<Team>('http://localhost:3000/players/'+id,player);
+  }
+  //leageus
+  getLeaguesList(){
+    return this.http.get<League[]>('http://localhost:3000/leagues');
   }
 }
