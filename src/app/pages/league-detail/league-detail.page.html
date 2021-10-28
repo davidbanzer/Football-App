@@ -1,44 +1,43 @@
-<app-header title="Team Detail" route="/tabs"></app-header>
+<app-header title="League Detail"></app-header>
 
 <ion-content>
   <form>
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Player name:</ion-label>
-          <ion-input #txtPlayerName="ngModel" [(ngModel)]="playerName" name="playerName" placeholder="Player Name">
-          </ion-input>
+          <ion-label position="floating">Team name:</ion-label>
+          <ion-input #txtName="ngModel" [(ngModel)]="name" name="name" placeholder="Team Name"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Player avatar:</ion-label>
-          <ion-input #txtAvatar="ngModel" [(ngModel)]="avatar" name="avatar" placeholder="Player avatar"></ion-input>
+          <ion-label position="floating">Team logo:</ion-label>
+          <ion-input #txtLogo="ngModel" [(ngModel)]="logo" name="logo" placeholder="Team Logo"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
     <ion-button class="add-button" (click)="submit()">
-      Add Player
+      Add Team
     </ion-button>
-  </form>
+  </form> 
   <ion-card class="expand">
     <ion-card-header class="ion-text-center">
-      <h2>{{team.name}}</h2>
+      <h2>{{league.name}}</h2>
     </ion-card-header>
     <ion-card-content class="ion-text-center">
-      <img src="{{team.logo}}" alt="Team logo">
+      <img src="{{league.logo}}" alt="League logo">
     </ion-card-content>
   </ion-card>
   <ion-card class="expand">
     <ion-card-header class="ion-text-center">
-      <h2>Players</h2>
+      <h2>Teams</h2>
     </ion-card-header>
     <ion-card-content class="ion-text-center">
-      <ion-item *ngFor="let player of playersList">
+      <ion-item *ngFor="let team of teamsList">
         <ion-label>
-          <h3>{{player.name}}</h3>
+          <h3>{{team.name}}</h3>
         </ion-label>
       </ion-item>
     </ion-card-content>

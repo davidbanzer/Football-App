@@ -44,6 +44,10 @@ const routes: Routes = [
     path: 'leagues',
     loadChildren: () => import('./pages/leagues/leagues.module').then( m => m.LeaguesPageModule)
   },
+  {
+    path: 'league-detail/:id',
+    loadChildren: () => import('./pages/league-detail/league-detail.module').then( m => m.LeagueDetailPageModule)
+  },
 ];
 
 @NgModule({

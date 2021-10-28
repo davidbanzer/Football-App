@@ -11,11 +11,9 @@ import { FootballApiService } from '../../services/football-api.service';
 })
 export class TeamsPage implements OnInit {
   teamsList: Team[] = [];
-  name: string;
-  logo: string;
-  league: string;
+
   // eslint-disable-next-line max-len
-  constructor(private api: FootballApiService, private router: Router, private ar: ActivatedRoute,  public toastController: ToastController) {
+  constructor(private api: FootballApiService, private router: Router, private ar: ActivatedRoute) {
     this.ar.params.subscribe(data => {
       this.fetchTeamsList();
       });
@@ -41,24 +39,5 @@ export class TeamsPage implements OnInit {
         console.log('borrado');
         this.teamsList = this.teamsList.filter(team => team.id !== id);
     });
-  }
-  addTeam(name: string, logo: string, league: string){
-    this.api.addTeam(name,logo,league).subscribe(newTeam =>{
-      this.teamsList.push(newTeam);
-    });
-  }
-  submit(){
-    this.addTeam(this.name,this.logo,this.league);
-    this.name = '';
-    this.logo = '';
-    this.league = '';
-    this.presentToast('Team added');
-  }
-  async presentToast(message){
-    const toast = await this.toastController.create({
-      message ,
-      duration : 2000
-    });
-    toast.present();
   }
 }

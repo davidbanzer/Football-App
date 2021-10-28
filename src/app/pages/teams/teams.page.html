@@ -5,59 +5,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Team name:</ion-label>
-          <ion-input #txtName="ngModel" [(ngModel)]="name" name="name"
-            placeholder="Team Name"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">Team logo:</ion-label>
-          <ion-input #txtLogo="ngModel" [(ngModel)]="logo" name="logo"
-            placeholder="Team Logo"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label position="floating">League:</ion-label>
-          <ion-input #txtName="ngModel" [(ngModel)]="league" name="league"
-            placeholder="League"></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-    <ion-button class="add-button" (click)="submit()">
-      Add Team
-    </ion-button>
-  </form>
-
   <ion-list>
-    <ion-item *ngFor="let team of teamsList">
-      <ion-card class="expand">
-        <ion-card-header class="ion-text-center">
-          <h2>{{team.name}}</h2>
-        </ion-card-header>
-        <ion-card-content class="ion-text-center">
-          <img src="{{team.logo}}" alt="Team logo" (click)="goToTeamDetail(team.id)">
-        </ion-card-content>
-        <div class="center_buttons">
-          <ion-tab-button (click)="goToEditTeam(team.id)">
-            <ion-icon class="icon" name="create"></ion-icon>
-            <ion-label>Edit</ion-label>
-          </ion-tab-button>
-          <ion-tab-button  (click)="deleteTeam(team.id)">
-            <ion-icon class="icon" name="trash"></ion-icon>
-            <ion-label>Delete</ion-label>
-          </ion-tab-button>
-        </div>
-      </ion-card>
+    <ion-item *ngFor="let team of teamsList" (click)="goToTeamDetail(team.id)">
+      <ion-avatar slot="start">
+        <img src="{{team.logo}}" alt="League logo">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{team.name}}</h2>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

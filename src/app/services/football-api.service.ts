@@ -69,4 +69,7 @@ export class FootballApiService {
   getLeaguesList(){
     return this.http.get<League[]>('http://localhost:3000/leagues');
   }
+  getLeagueById(id: string){
+    return this.http.get<League>('http://localhost:3000/leagues/'+id);
+  }
 }

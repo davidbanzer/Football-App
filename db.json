@@ -56,6 +56,12 @@
       "logo": "https://1000marcas.net/wp-content/uploads/2020/03/Logo-Barcelona.png",
       "league": "3",
       "id": 5
+    },
+    {
+      "name": "Dynazzy",
+      "logo": "https://robohash.org/quisconsequunturest.png?size=250x250&set=set1",
+      "league": "1",
+      "id": 6
     }
   ],
   "players": [

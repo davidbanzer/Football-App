@@ -25,4 +25,7 @@ export class LeaguesPage implements OnInit {
       this.leaguesList = league;
     });
   }
+  goToLeagueDetail(id: string){
+    this.router.navigateByUrl('league-detail/'+id);
+  }
 }
