@@ -16,7 +16,7 @@ export class SplashScreenPage implements OnInit {
   }
   goToTeamsPage(){
     setTimeout(() => {
-      this.router.navigateByUrl('tabs/teams',{replaceUrl:true});
+      this.router.navigateByUrl('tabs',{replaceUrl:true});
     }, 2000);
   }
 }

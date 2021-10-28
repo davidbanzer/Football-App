@@ -41,13 +41,10 @@ export class TeamDetailPage implements OnInit {
       console.log(this.playersList);
     });
   }
-  addPlayer(name: string, avatar: string, team: string){
-    this.api.addPlayer(name,avatar,team).subscribe(newPlayer =>{
+  submit(){
+    this.api.addPlayer(this.playerName,this.avatar,this.teamId).subscribe(newPlayer =>{
       this.playersList.push(newPlayer);
     });
-  }
-  submit(){
-    this.addPlayer(this.playerName,this.avatar,this.teamId);
     this.playerName = '';
     this.avatar = '';
   }

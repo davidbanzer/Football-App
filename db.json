@@ -68,6 +68,12 @@
       "logo": "https://robohash.org/sintsuntquas.png?size=250x250&set=set1",
       "league": "4",
       "id": 7
+    },
+    {
+      "name": "Zoomdog",
+      "logo": "https://robohash.org/sitmolestiaemollitia.png?size=250x250&set=set1",
+      "league": "5",
+      "id": 8
     }
   ],
   "players": [
@@ -106,6 +112,12 @@
       "avatar": "https://robohash.org/aperiamanimiut.png?size=250x250&set=set1\"",
       "teamId": "6",
       "id": 6
+    },
+    {
+      "name": "Marcos Bradnam",
+      "avatar": "https://robohash.org/eaveroaut.png?size=250x250&set=set1\"",
+      "teamId": "8",
+      "id": 7
     }
   ]
 }

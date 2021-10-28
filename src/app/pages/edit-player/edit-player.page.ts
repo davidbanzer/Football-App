@@ -29,13 +29,10 @@ export class EditPlayerPage implements OnInit {
       console.log(this.player);
     });
   }
-  editPlayer(id: string,name: string, avatar: string, team: string){
-    this.api.editPlayer(id,name,avatar,team).subscribe(newPlayer =>{
+  submit(){
+    this.api.editPlayer(this.playerId,this.name, this.avatar, this.teamId).subscribe(newPlayer =>{
       console.log(newPlayer);
     });
-  }
-  submit(){
-    this.editPlayer(this.playerId,this.name, this.avatar, this.teamId);
     this.navCtrl.back();
   }
 }

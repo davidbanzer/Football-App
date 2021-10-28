@@ -4,6 +4,21 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <form>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input #txtNameSearch="ngModel" [(ngModel)]="nameSearch" name="nameSearch"
+            placeholder="Player Name"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-button class="search-button" (click)="search()">
+          Search
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
   <ion-list>
     <ion-item *ngFor="let player of playersList">
       <ion-avatar slot="start">

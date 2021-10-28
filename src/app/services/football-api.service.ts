@@ -49,6 +49,9 @@ export class FootballApiService {
   getPlayerById(id: string){
     return this.http.get<Player>('http://localhost:3000/players/'+id);
   }
+  getPlayerBySearch(name: string){
+    return this.http.get<Player[]>('http://localhost:3000/players?name_like='+name);
+  }
   addPlayer(name: string, avatar: string, teamId: string){
     const player = {
       name,

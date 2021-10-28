@@ -14,6 +14,7 @@ export class PlayersPage implements OnInit {
   name: string;
   avatar: string;
   teamId: string;
+  nameSearch: string;
   // eslint-disable-next-line max-len
   constructor(private api: FootballApiService, private router: Router, private ar: ActivatedRoute,  public toastController: ToastController) {
     this.ar.params.subscribe(data => {
@@ -44,6 +45,12 @@ export class PlayersPage implements OnInit {
   deletePlayer(id: string){
     this.api.deletePlayer(id).subscribe(()=>{
       this.playersList = this.playersList.filter(player => player.id !== id);
+    });
+  }
+  search(){
+    this.api.getPlayerBySearch(this.nameSearch).subscribe((player: Player[])=>{
+      this.playersList = [];
+      this.playersList = player;
     });
   }
 

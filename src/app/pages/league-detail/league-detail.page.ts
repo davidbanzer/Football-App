@@ -36,13 +36,10 @@ export class LeagueDetailPage implements OnInit {
       this.teamsList = team;
     });
   }
-  addTeam(name: string, logo: string, league: string){
-    this.api.addTeam(name,logo,league).subscribe(newTeam =>{
+  submit(){
+    this.api.addTeam(this.name,this.logo,this.leagueId).subscribe(newTeam =>{
       this.teamsList.push(newTeam);
     });
-  }
-  submit(){
-    this.addTeam(this.name,this.logo,this.leagueId);
     this.name = '';
     this.logo = '';
   }

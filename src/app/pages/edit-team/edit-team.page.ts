@@ -29,13 +29,10 @@ export class EditTeamPage implements OnInit {
       console.log(this.team);
     });
   }
-  editTeam(id: string,name: string, logo: string, league: string){
-    this.api.editTeam(id,name,logo,league).subscribe(newTeam =>{
+  submit(){
+    this.api.editTeam(this.teamId,this.name,this.logo,this.league).subscribe(newTeam =>{
       console.log(newTeam);
     });
-  }
-  submit(){
-    this.editTeam(this.teamId,this.name,this.logo,this.league);
     this.navCtrl.back();
   }
 
