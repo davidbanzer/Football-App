@@ -8,6 +8,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path:'tabs',
+    redirectTo: 'tabs/teams',
+    pathMatch: 'full'
+  },
+  {
     path: 'splash-screen',
     loadChildren: () => import('./pages/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
   },
@@ -30,6 +35,10 @@ const routes: Routes = [
   {
     path: 'players',
     loadChildren: () => import('./pages/players/players.module').then( m => m.PlayersPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
 ];
 
