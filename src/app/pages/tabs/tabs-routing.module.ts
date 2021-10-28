@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 import { TeamsPageModule } from '../teams/teams.module';
+import { LeaguesPageModule } from '../leagues/leagues.module';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'players',
         loadChildren: () => import('../players/players.module').then( m => m.PlayersPageModule)
+      },
+      {
+        path: 'leagues',
+        loadChildren: () => import('../leagues/leagues.module').then( m => m.LeaguesPageModule)
       }
     ]
   }

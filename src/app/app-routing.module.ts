@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path:'tabs',
-    redirectTo: 'tabs/teams',
+    redirectTo: 'tabs/leagues',
     pathMatch: 'full'
   },
   {
@@ -39,6 +39,10 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'leagues',
+    loadChildren: () => import('./pages/leagues/leagues.module').then( m => m.LeaguesPageModule)
   },
 ];
 

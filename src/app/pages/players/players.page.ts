@@ -11,6 +11,9 @@ import { Player } from '../../models/Player';
 })
 export class PlayersPage implements OnInit {
   playersList: Player[] = [];
+  name: string;
+  avatar: string;
+  teamId: string;
   // eslint-disable-next-line max-len
   constructor(private api: FootballApiService, private router: Router, private ar: ActivatedRoute,  public toastController: ToastController) {
     this.ar.params.subscribe(data => {
@@ -25,6 +28,15 @@ export class PlayersPage implements OnInit {
     this.api.getPlayersList().subscribe((player: Player[]) => {
       this.playersList = player;
     });
+  }
+  submit(){
+    this.api.addPlayer(this.name, this.avatar, this.teamId);
+    this.name = '';
+    this.avatar = '';
+    this.teamId = '';
+  }
+  goToPlayerDetail(id: string){
+    this.router.navigateByUrl('player-detail/'+id);
   }
 
 }

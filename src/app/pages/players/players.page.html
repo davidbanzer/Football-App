@@ -3,7 +3,6 @@
     <ion-title>Players</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let player of playersList">
@@ -12,14 +11,16 @@
           <h2>{{player.name}}</h2>
         </ion-card-header>
         <ion-card-content class="ion-text-center">
-          <img src="{{player.avatar}}" alt="Avatar">
+          <img src="{{player.avatar}}" alt="Avatar" (click)="goToPlayerDetail(player.id)">
         </ion-card-content>
         <div class="center_buttons">
           <ion-tab-button >
             <ion-icon class="icon" name="create"></ion-icon>
+            <ion-label>Edit</ion-label>
           </ion-tab-button>
           <ion-tab-button >
             <ion-icon class="icon" name="trash"></ion-icon>
+            <ion-label>Delete</ion-label>
           </ion-tab-button>
         </div>
       </ion-card>
